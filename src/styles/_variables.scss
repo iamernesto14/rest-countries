@@ -1,0 +1,55 @@
+:root {
+    /* Color Variables */
+    --gray-900: #111517;
+    --gray-800: #848484;
+    --gray-700: #808080;
+    --gray-600: #979797;
+    --gray-400: #b2b2b2;
+    --gray-300: #c4c4c4;
+    --gray-100: #fafafa;
+    
+    --blue-950: #202c36; 
+    --blue-900: #2b3844;
+       
+    --black: #000000;
+    --white: #ffffff;
+  
+    /* Typography Presets */
+    --font-preset-1-size: 1.5rem;
+    --font-preset-1-weight: 800;
+  
+    --font-preset-2-size: 1.125rem;
+    --font-preset-2-weight: 700;
+    --font-preset-2-line: 26px;
+  
+    --font-preset-3-size: 1rem;
+    --font-preset-3-weight: 600;
+  
+    --font-preset-4-size: 0.875rem;
+    --font-preset-4-weight: 500;
+  
+    --font-preset-4-light-weight: 300;
+    --font-preset-4-light-line: 16px;
+  
+    --font-preset-5-bold-weight: 600;
+    --font-preset-5-size: 0.75rem;
+    --font-preset-5-weight: 400;
+
+    // Light Theme Colors
+    --bg-color: var(--gray-100);
+    --primary-text-color: var(--gray-900);
+    --secondary-text-color: var(--gray-700);
+    --header-bg-color: var(--white);
+    --search-text-color: var(--gray-800);
+    --search-bg-color: var(--white);
+}
+
+/* Dark Theme Colors */
+.dark-theme {
+    --bg-color: var(--blue-950);
+    --primary-text-color: var(--white);
+    --secondary-text-color: var(--gray-400);
+    --header-bg-color: var(--blue-900);
+    --search-text-color: var(--white);
+    --search-bg-color: var(--blue-900);
+}
