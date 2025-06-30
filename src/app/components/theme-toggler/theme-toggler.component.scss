@@ -1,0 +1,11 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.theme-toggle {
+    @include flex(row, flex-start, center);
+    gap: 0.8rem;
+
+    .moon {
+        color: transparent;
+    }
+}
