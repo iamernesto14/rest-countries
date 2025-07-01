@@ -1,11 +1,27 @@
+// src/app/components/theme-toggler/theme-toggler.component.scss
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
 .theme-toggle {
-    @include flex(row, flex-start, center);
-    gap: 0.8rem;
-
-    .moon {
-        color: transparent;
+  @include flex(row, flex-start, center);
+  gap: 0.8rem;
+  cursor: pointer;
+  
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: opacity 0.2s ease;
+  }
+  
+  span {
+    font-size: var(--font-preset-4-size);
+    font-weight: var(--font-preset-4-weight);
+    color: var(--primary-text-color);
+  }
+  
+  &:hover {
+    .icon {
+      opacity: 0.7;
     }
+  }
 }

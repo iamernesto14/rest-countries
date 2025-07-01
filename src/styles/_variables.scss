@@ -1,3 +1,4 @@
+// src/styles/_variables.scss
 :root {
     /* Color Variables */
     --gray-900: #111517;
@@ -35,7 +36,7 @@
     --font-preset-5-size: 0.75rem;
     --font-preset-5-weight: 400;
 
-    // Light Theme Colors
+    /* Light Theme Colors */
     --bg-color: var(--gray-100);
     --primary-text-color: var(--gray-900);
     --secondary-text-color: var(--gray-700);
@@ -45,7 +46,7 @@
 }
 
 /* Dark Theme Colors */
-.dark-theme {
+[data-theme="dark"] {
     --bg-color: var(--blue-950);
     --primary-text-color: var(--white);
     --secondary-text-color: var(--gray-400);

@@ -1,11 +1,18 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
-  <title>CountriesFlag</title>
+  <title>WhereInTheWorld</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const isValidTheme = savedTheme === 'light' || savedTheme === 'dark';
+      document.documentElement.setAttribute('data-theme', isValidTheme ? savedTheme : 'light');
+    })();
+  </script>
 </head>
 <body>
   <app-root></app-root>
