@@ -8,7 +8,10 @@ import { provideEffects } from '@ngrx/effects';
 import { themeReducer } from './store/theme/theme.reducer';
 import { ThemeEffects } from './store/theme/theme.effects';
 import { provideHttpClient } from '@angular/common/http';
+import { countryReducer } from './store/countries/country.reducer';
+import { CountryEffects } from './store/countries/country.effects';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideHttpClient(),  provideStore({ theme: themeReducer }),provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }), provideEffects([ThemeEffects])]
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideHttpClient(), provideStore({ theme: themeReducer, country: countryReducer }),
+  provideEffects([CountryEffects]), provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }), provideEffects([ThemeEffects])]
 };
