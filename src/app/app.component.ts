@@ -3,13 +3,14 @@ import { Store } from '@ngrx/store';
 import { selectTheme } from './store/theme/theme.selectors';
 import { HomeComponent } from './components/home/home.component';
 import { loadTheme } from './store/theme/theme.actions';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   standalone: true,
-  imports: [HomeComponent]
+  imports: [HomeComponent, RouterOutlet]
 })
 export class AppComponent {
   constructor(private store: Store) {
