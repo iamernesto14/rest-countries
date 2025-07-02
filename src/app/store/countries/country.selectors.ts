@@ -18,3 +18,8 @@ export const selectError = createSelector(
   selectCountryState,
   (state) => state.error,
 );
+
+export const selectSelectedCountry = createSelector(
+  selectCountryState,
+  (state) => state.selectedCountry,
+);

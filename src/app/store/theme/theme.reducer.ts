@@ -1,13 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { setTheme, toggleTheme } from './theme.actions';
-
-export interface ThemeState {
-  theme: 'light' | 'dark';
-}
-
-export const initialState: ThemeState = {
-  theme: localStorage.getItem('theme') === 'dark' ? 'dark' : 'light',
-};
+import { initialState, ThemeState } from './theme.state';
 
 export const themeReducer = createReducer(
   initialState,

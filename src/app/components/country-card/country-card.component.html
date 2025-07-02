@@ -1,22 +1,24 @@
 <div *ngIf="loading$ | async" class="loading">Loading countries...</div>
 
-<div *ngIf="error$ | async as error" class="error">Error: {{ error }}</div>
+<!-- <div *ngIf="error$ | async as error" class="error">Error: {{ error }}</div> -->
 
 <section class="country-list" *ngIf="countries$ | async as countries">
   <article
     *ngFor="let country of countries"
     class="country-card"
-    (click)="viewDetails(country.cca3)"> 
+    (click)="viewDetails(country.cca3)"
+  >
     <img
       *ngIf="country?.flags?.png"
       [src]="country.flags.png"
-      [alt]="country.name.common + ' flag'"/>
+      [alt]="country.name.common + ' flag'"
+    />
 
     <div class="country-info">
-        <h2>{{ country.name.common || "Unknown Country" }}</h2>
-        <p><strong>Population:</strong> {{ country.population | number }}</p>
-        <p><strong>Region:</strong> {{ country.region || "N/A" }}</p>
-        <p><strong>Capital:</strong> {{ country.capital?.[0] || "N/A" }}</p>
+      <h2>{{ country.name.common || "Unknown Country" }}</h2>
+      <p><strong>Population:</strong> {{ country.population | number }}</p>
+      <p><strong>Region:</strong> {{ country.region || "N/A" }}</p>
+      <p><strong>Capital:</strong> {{ country.capital?.[0] || "N/A" }}</p>
     </div>
   </article>
 </section>

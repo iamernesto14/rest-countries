@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { ThemeState } from './theme.reducer';
+import { ThemeState } from './theme.state';
 
 export const selectThemeState = createFeatureSelector<ThemeState>('theme');
 

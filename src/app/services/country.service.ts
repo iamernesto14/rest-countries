@@ -14,7 +14,8 @@ export class CountryService {
 
   // Fetch all countries
   getAllCountries(): Observable<any> {
-    const fields ='name,capital,population,cca3,languages,flags,region,subregion';
+    const fields =
+      'name,capital,population,cca3,languages,flags,region,subregion,currencies,tld';
     const url = `${this.apiUrl}/all?fields=${fields}`;
     return this.http.get(url).pipe(catchError(this.handleError));
   }

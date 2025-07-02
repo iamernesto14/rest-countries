@@ -5,12 +5,16 @@ import { CountryDetailsComponent } from './components/country-details/country-de
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    loadComponent: () =>
+      import('./components/home/home.component').then((m) => m.HomeComponent),
     title: 'Home',
   },
   {
     path: 'country/:code',
-    component: CountryDetailsComponent,
+    loadComponent: () =>
+      import('./components/country-details/country-details.component').then(
+        (m) => m.CountryDetailsComponent,
+      ),
     title: 'Country Details',
   },
   {

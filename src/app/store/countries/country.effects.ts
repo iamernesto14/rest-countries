@@ -24,4 +24,22 @@ export class CountryEffects {
       ),
     ),
   );
+
+  loadCountryByCode$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(CountryActions.loadCountryByCode),
+      mergeMap(({ code }) =>
+        this.countryApi.getCountryByCode(code).pipe(
+          map((country) =>
+            CountryActions.loadCountryByCodeSuccess({ country }),
+          ),
+          catchError((error) =>
+            of(
+              CountryActions.loadCountryByCodeFailure({ error: error.message }),
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
 }

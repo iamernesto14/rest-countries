@@ -19,4 +19,10 @@ export const countryReducer = createReducer(
     loading: false,
     error,
   })),
+  on(CountryActions.loadCountryByCodeSuccess, (state, { country }) => ({
+    ...state,
+    selectedCountry: country,
+    loading: false,
+    error: null,
+  })),
 );
