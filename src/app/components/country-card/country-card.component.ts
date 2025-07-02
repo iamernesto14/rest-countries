@@ -7,6 +7,7 @@ import {
   selectAllCountries,
   selectLoading,
   selectError,
+  selectFilteredCountries,
 } from '../../store/countries/country.selectors';
 
 @Component({
@@ -20,7 +21,7 @@ export class CountryCardComponent implements OnInit {
   private store = inject(Store);
   private router = inject(Router);
 
-  countries$ = this.store.select(selectAllCountries);
+  countries$ = this.store.select(selectFilteredCountries);
   loading$ = this.store.select(selectLoading);
   // error$ = this.store.select(selectError);
 
