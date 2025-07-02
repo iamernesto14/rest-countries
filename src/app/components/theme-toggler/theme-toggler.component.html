@@ -1,0 +1,17 @@
+<div class="theme-toggle" (click)="toggleTheme()">
+  <div>
+    <img
+      src="assets/images/outline-moon.svg"
+      alt="moon icon"
+      class="icon"
+      *ngIf="(theme$ | async) === 'light'"
+    />
+    <img
+      src="assets/images/moon.svg"
+      alt="sun icon"
+      class="icon"
+      *ngIf="(theme$ | async) === 'dark'"
+    />
+  </div>
+  <span>Dark Mode</span>
+</div>
