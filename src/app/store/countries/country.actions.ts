@@ -5,10 +5,10 @@ export const loadCountries = createAction('[Country] Load Countries');
 
 export const loadCountriesSuccess = createAction(
   '[Country] Load Countries Success',
-  props<{ countries: Country[] }>()
+  props<{ countries: Country[] }>(),
 );
 
 export const loadCountriesFailure = createAction(
   '[Country] Load Countries Failure',
-  props<{ error: string }>()
+  props<{ error: string }>(),
 );

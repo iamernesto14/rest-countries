@@ -9,5 +9,5 @@ export interface CountryState {
 export const initialCountryState: CountryState = {
   countries: [],
   loading: false,
-  error: null
+  error: null,
 };

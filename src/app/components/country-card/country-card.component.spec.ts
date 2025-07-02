@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ThemeTogglerComponent } from './theme-toggler.component';
+import { CountryCardComponent } from './country-card.component';
 
-describe('ThemeTogglerComponent', () => {
-  let component: ThemeTogglerComponent;
-  let fixture: ComponentFixture<ThemeTogglerComponent>;
+describe('CountryCardComponent', () => {
+  let component: CountryCardComponent;
+  let fixture: ComponentFixture<CountryCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ThemeTogglerComponent],
+      imports: [CountryCardComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ThemeTogglerComponent);
+    fixture = TestBed.createComponent(CountryCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './theme-toggler.component.scss',
   standalone: true,
   imports: [CommonModule],
-
 })
 export class ThemeTogglerComponent {
   private store = inject(Store);

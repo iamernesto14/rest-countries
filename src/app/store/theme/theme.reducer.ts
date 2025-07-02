@@ -6,7 +6,7 @@ export interface ThemeState {
 }
 
 export const initialState: ThemeState = {
-  theme: localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'
+  theme: localStorage.getItem('theme') === 'dark' ? 'dark' : 'light',
 };
 
 export const themeReducer = createReducer(
@@ -16,8 +16,10 @@ export const themeReducer = createReducer(
     return { ...state, theme };
   }),
   on(toggleTheme, (state) => {
-    const newTheme = (state.theme === 'light' ? 'dark' : 'light') as 'light' | 'dark'
+    const newTheme = (state.theme === 'light' ? 'dark' : 'light') as
+      | 'light'
+      | 'dark';
     localStorage.setItem('theme', newTheme);
     return { ...state, theme: newTheme };
-  })
+  }),
 );

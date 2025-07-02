@@ -4,19 +4,19 @@ import * as CountryActions from './country.actions';
 
 export const countryReducer = createReducer(
   initialCountryState,
-  on(CountryActions.loadCountries, state => ({
+  on(CountryActions.loadCountries, (state) => ({
     ...state,
     loading: true,
-    error: null
+    error: null,
   })),
   on(CountryActions.loadCountriesSuccess, (state, { countries }) => ({
     ...state,
     loading: false,
-    countries
+    countries,
   })),
   on(CountryActions.loadCountriesFailure, (state, { error }) => ({
     ...state,
     loading: false,
-    error
-  }))
+    error,
+  })),
 );

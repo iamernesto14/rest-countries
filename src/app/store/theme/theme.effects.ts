@@ -11,9 +11,10 @@ export class ThemeEffects {
     this.actions$.pipe(
       ofType(loadTheme),
       map(() => {
-        const theme = (localStorage.getItem('theme') as 'light' | 'dark') || 'light';
+        const theme =
+          (localStorage.getItem('theme') as 'light' | 'dark') || 'light';
         return setTheme({ theme });
-      })
-    )
+      }),
+    ),
   );
 }

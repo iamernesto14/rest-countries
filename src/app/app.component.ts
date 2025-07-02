@@ -10,7 +10,7 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   standalone: true,
-  imports: [HomeComponent, RouterOutlet]
+  imports: [HomeComponent, RouterOutlet],
 })
 export class AppComponent {
   constructor(private store: Store) {
