@@ -1,0 +1,10 @@
+<div class="region-filter">
+    <label for="region-select">Filter by Region</label>
+    <select id="region-select" [formControl]="regionControl">
+      <option value="">All Regions</option>
+      <option *ngFor="let region of regions" [value]="region">
+        {{ region }}
+      </option>
+    </select>
+  </div>
+  
