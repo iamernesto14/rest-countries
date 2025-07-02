@@ -29,17 +29,6 @@ export const selectSearchQuery = createSelector(
     (state) => state.searchQuery
   );
   
-//   export const selectFilteredCountries = createSelector(
-//     selectAllCountries,
-//     selectSearchQuery,
-//     (countries, query) => {
-//       if (!query.trim()) return countries;
-//       return countries.filter((c) =>
-//         c.name.common.toLowerCase().includes(query.toLowerCase())
-//       );
-//     }
-//   );
-  
 export const selectFilteredCountries = createSelector(
     selectAllCountries,
     selectSearchQuery,
