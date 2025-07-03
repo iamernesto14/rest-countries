@@ -5,7 +5,6 @@ import * as CountryActions from './country.actions';
 export const countryReducer = createReducer(
   initialCountryState,
 
-  // Fetch all countries
   on(CountryActions.loadCountries, (state) => ({
     ...state,
     loading: true,
@@ -22,7 +21,6 @@ export const countryReducer = createReducer(
     error,
   })),
 
-  // Fetch single country
   on(CountryActions.loadCountryByCode, (state) => ({
     ...state,
     loading: true,
@@ -40,7 +38,6 @@ export const countryReducer = createReducer(
     error,
   })),
 
-  // Search + filter
   on(CountryActions.setSearchQuery, (state, { query }) => ({
     ...state,
     searchQuery: query,

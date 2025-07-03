@@ -12,7 +12,6 @@ export class CountryService {
 
   constructor(private http: HttpClient) {}
 
-  // Fetch all countries
   getAllCountries(): Observable<any> {
     const fields =
       'name,capital,population,cca3,languages,flags,region,subregion,currencies,tld';
@@ -20,14 +19,12 @@ export class CountryService {
     return this.http.get(url).pipe(catchError(this.handleError));
   }
 
-  // Fetch multiple countries by codes
   getCountriesByCodes(codes: string[]): Observable<any> {
     const codeParams = codes.join(',');
     const url = `${this.apiUrl}/alpha?codes=${codeParams}`;
     return this.http.get<Country[]>(url).pipe(catchError(this.handleError));
   }
 
-  // Fetch a specific country by alpha3Code
   getCountryByCode(code: string): Observable<Country> {
     const url = `${this.apiUrl}/alpha/${code}`;
     return this.http.get<Country[]>(url).pipe(
@@ -36,7 +33,6 @@ export class CountryService {
     );
   }
 
-  // Handle HTTP errors
   private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = 'An unknown error occurred';
     if (error.error instanceof ErrorEvent) {

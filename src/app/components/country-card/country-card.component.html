@@ -1,4 +1,3 @@
-<!-- <div *ngIf="loading$ | async" class="loading">Loading countries...</div> -->
 <app-spinner *ngIf="loading$ | async"></app-spinner>
 
 <section class="country-list" *ngIf="countries$ | async as countries">

@@ -4,9 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import {
-  selectAllCountries,
   selectLoading,
-  selectError,
   selectFilteredCountries,
 } from '../../store/countries/country.selectors';
 import { SpinnerComponent } from '../spinner/spinner.component';
@@ -24,7 +22,6 @@ export class CountryCardComponent implements OnInit {
 
   countries$ = this.store.select(selectFilteredCountries);
   loading$ = this.store.select(selectLoading);
-  // error$ = this.store.select(selectError);
 
   ngOnInit(): void {
     this.store.dispatch(loadCountries());
