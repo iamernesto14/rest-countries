@@ -1,0 +1,36 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--primary-text-color);
+  z-index: 9999;
+  @include flex(column, center, center);
+
+  .spinner {
+    width: 48px;
+    height: 48px;
+    border: 6px solid rgba(255, 255, 255, 0.2);
+    border-left-color: var(--primary-text-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  .spinner-message {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--primary-text-color);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

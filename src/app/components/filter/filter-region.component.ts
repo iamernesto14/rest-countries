@@ -22,5 +22,4 @@ export class FilterRegionComponent {
       this.store.dispatch(setFilterRegion({ region: region || '' }));
     });
   }
-  
 }

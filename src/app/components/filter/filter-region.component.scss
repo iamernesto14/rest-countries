@@ -1,0 +1,20 @@
+.region-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1rem;
+  margin: 1rem;
+  width: 170px;
+
+  select {
+    padding: 1rem;
+    border-radius: 2px;
+    border: none;
+    color: var(--primary-text-color);
+    background-color: var(--header-bg-color);
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

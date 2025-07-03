@@ -1,59 +1,141 @@
-# CountriesFlag
+# Countries Flag API
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+This project is an Angular application that allows users to explore countries using the REST Countries API. It provides features to view, search, and filter countries, as well as view detailed information about each country. The application also includes a theme toggler for switching between light and dark modes.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- View a list of all countries.
+- Search for a country by name.
+- Filter countries by region.
+- View detailed information for a specific country.
+- Toggle between light and dark themes.
+- Responsive design for optimal viewing on different devices.
 
-```bash
-ng serve
-```
+## Tech Stack
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Angular**: A powerful framework for building dynamic web applications.
+- **NgRx**: A state management library for Angular applications, providing a predictable state container.
+- **RxJS**: A library for reactive programming using Observables, making it easier to compose asynchronous or callback-based code.
+- **SCSS**: A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
 
-## Code scaffolding
+## Setup and Installation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+To get a local copy up and running, follow these simple steps.
 
-```bash
-ng generate component component-name
-```
+### Prerequisites
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Node.js and npm installed on your machine.
 
-```bash
-ng generate --help
-```
+### Installation
 
-## Building
+1. Clone the repo
+   ```sh
+   git clone https://github.com/your_username/countries-flag.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
 
-To build the project run:
+## Running the Application
 
-```bash
+To run the application in a development environment, use the following command:
+
+```sh
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+This will start a development server, and you can view the application at `http://localhost:4200/`.
 
-## Running unit tests
+## Architectural Choices
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Standalone Components
 
-```bash
-ng test
+This project utilizes Angular's standalone components, which simplifies the architecture by reducing the need for `NgModule`. Each component manages its own dependencies, making them more modular and reusable.
+
+### SCSS for Styling
+
+SCSS is used for styling to leverage features like variables, mixins, and nesting, which help in writing more maintainable and organized CSS.
+
+## Folder Structure
+
+The project follows a standard Angular CLI structure, with the main application code located in the `src` directory.
+
+```
+.
+├── src
+│   ├── app
+│   │   ├── components
+│   │   │   ├── country-card
+│   │   │   ├── country-details
+│   │   │   ├── filter
+│   │   │   ├── header
+│   │   │   ├── home
+│   │   │   ├── search
+│   │   │   ├── spinner
+│   │   │   └── theme-toggler
+│   │   ├── models
+│   │   ├── pipes
+│   │   ├── services
+│   │   └── store
+│   │       ├── countries
+│   │       └── theme
+│   ├── assets
+│   ├── environments
+│   └── styles
+├── public
+└── ...
 ```
 
-## Running end-to-end tests
+- **`src/app/components`**: Contains all the reusable UI components of the application.
+- **`src/app/models`**: Defines the data structures and interfaces used throughout the application.
+- **`src/app/pipes`**: Includes custom pipes for data transformation.
+- **`src/app/services`**: Provides services for fetching data from the API.
+- **`src/app/store`**: Contains the NgRx state management logic, divided into separate stores for `countries` and `theme`.
+- **`src/assets`**: Stores static assets like images and icons.
+- **`src/environments`**: Manages environment-specific configurations.
+- **`src/styles`**: Contains global styles and SCSS variables.
+## NgRx State Management
 
-For end-to-end (e2e) testing, run:
+The application uses NgRx for state management, which is divided into two main stores: `country` and `theme`.
 
-```bash
-ng e2e
-```
+### Country Store
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+The `country` store manages the state related to countries, including the list of all countries, the currently selected country, loading status, and any errors.
 
-## Additional Resources
+- **Actions**:
+  - `loadCountries`: Triggers fetching all countries.
+  - `loadCountriesSuccess`: Dispatched when countries are successfully fetched.
+  - `loadCountriesFailure`: Dispatched when there is an error fetching countries.
+  - `loadCountryByCode`: Triggers fetching a single country by its code.
+  - `loadCountryByCodeSuccess`: Dispatched when a single country is successfully fetched.
+  - `loadCountryByCodeFailure`: Dispatched when there is an error fetching a single country.
+  - `setSearchQuery`: Updates the search query for filtering countries.
+  - `setFilterRegion`: Updates the region for filtering countries.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Effects**:
+  - `CountryEffects`: Handles the side effects of fetching data from the `CountryService` and dispatches the appropriate success or failure actions.
+
+- **Reducer**:
+  - `countryReducer`: Manages the state changes for the country store based on the dispatched actions.
+
+### Theme Store
+
+The `theme` store manages the application's theme (light or dark).
+
+- **Actions**:
+  - `toggleTheme`: Toggles the theme between light and dark.
+  - `setTheme`: Sets the theme to a specific value ('light' or 'dark').
+  - `loadTheme`: Loads the theme from local storage.
+
+- **Effects**:
+  - `ThemeEffects`: Handles the side effects of persisting the theme to local storage.
+
+- **Reducer**:
+  - `themeReducer`: Manages the state changes for the theme store.
+
+## Custom Pipes and Directives
+
+### ObjectValuesPipe
+
+The `ObjectValuesPipe` is a custom pipe used to transform and display complex object values, such as languages and currencies, in a readable format. It can handle nested objects and joins the values into a comma-separated string.
