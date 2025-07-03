@@ -27,3 +27,8 @@ export const loadCountryByCodeFailure = createAction(
   '[Country] Load Country By Code Failure',
   props<{ error: string }>(),
 );
+
+export const setSearchQuery = createAction(
+  '[Country] Set Search Query',
+  props<{ query: string }>()
+);

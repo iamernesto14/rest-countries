@@ -25,4 +25,9 @@ export const countryReducer = createReducer(
     loading: false,
     error: null,
   })),
+  on(CountryActions.setSearchQuery, (state, { query }) => ({
+    ...state,
+    searchQuery: query,
+  }))
+  
 );
