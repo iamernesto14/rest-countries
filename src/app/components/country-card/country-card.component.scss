@@ -1,3 +1,6 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
 .country-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -44,3 +47,18 @@
     }
   }
 }
+
+.no-results {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--primary-text-color);
+    padding: 1rem;
+    font-size: 1.25rem;
+    font-weight: 300;
+    width: 100%;
+    max-width: 400px;
+  }
+  

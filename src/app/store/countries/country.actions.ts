@@ -32,3 +32,8 @@ export const setSearchQuery = createAction(
   '[Country] Set Search Query',
   props<{ query: string }>()
 );
+
+export const setFilterRegion = createAction(
+  '[Country] Set Filter Region',
+  props<{ region: string }>()
+);
