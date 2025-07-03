@@ -9,11 +9,12 @@ import {
   selectError,
   selectFilteredCountries,
 } from '../../store/countries/country.selectors';
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 @Component({
   selector: 'app-country-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SpinnerComponent],
   templateUrl: './country-card.component.html',
   styleUrl: './country-card.component.scss',
 })

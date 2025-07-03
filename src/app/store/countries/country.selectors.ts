@@ -25,26 +25,25 @@ export const selectSelectedCountry = createSelector(
 );
 
 export const selectSearchQuery = createSelector(
-    selectCountryState,
-    (state) => state.searchQuery
-  );
-  
+  selectCountryState,
+  (state) => state.searchQuery,
+);
+
 export const selectFilteredCountries = createSelector(
-    selectAllCountries,
-    selectSearchQuery,
-    selectCountryState,
-    (countries, query, state) => {
-      return countries.filter((country) => {
-        const matchesSearch = query
-          ? country.name.common.toLowerCase().includes(query.toLowerCase())
-          : true;
-  
-        const matchesRegion = state.filterRegion
-          ? country.region.toLowerCase() === state.filterRegion.toLowerCase()
-          : true;
-  
-        return matchesSearch && matchesRegion;
-      });
-    }
-  );
-  
+  selectAllCountries,
+  selectSearchQuery,
+  selectCountryState,
+  (countries, query, state) => {
+    return countries.filter((country) => {
+      const matchesSearch = query
+        ? country.name.common.toLowerCase().includes(query.toLowerCase())
+        : true;
+
+      const matchesRegion = state.filterRegion
+        ? country.region.toLowerCase() === state.filterRegion.toLowerCase()
+        : true;
+
+      return matchesSearch && matchesRegion;
+    });
+  },
+);

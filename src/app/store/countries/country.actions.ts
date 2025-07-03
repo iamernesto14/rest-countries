@@ -30,10 +30,10 @@ export const loadCountryByCodeFailure = createAction(
 
 export const setSearchQuery = createAction(
   '[Country] Set Search Query',
-  props<{ query: string }>()
+  props<{ query: string }>(),
 );
 
 export const setFilterRegion = createAction(
   '[Country] Set Filter Region',
-  props<{ region: string }>()
+  props<{ region: string }>(),
 );
