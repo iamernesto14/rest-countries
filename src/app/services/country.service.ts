@@ -12,14 +12,14 @@ export class CountryService {
 
   constructor(private http: HttpClient) {}
 
-  getAllCountries(): Observable<any> {
+  getAllCountries(): Observable<Country[]> {
     const fields =
       'name,capital,population,cca3,languages,flags,region,subregion,currencies,tld';
     const url = `${this.apiUrl}/all?fields=${fields}`;
-    return this.http.get(url).pipe(catchError(this.handleError));
+    return this.http.get<Country[]>(url).pipe(catchError(this.handleError));
   }
 
-  getCountriesByCodes(codes: string[]): Observable<any> {
+  getCountriesByCodes(codes: string[]): Observable<Country[]> {
     const codeParams = codes.join(',');
     const url = `${this.apiUrl}/alpha?codes=${codeParams}`;
     return this.http.get<Country[]>(url).pipe(catchError(this.handleError));

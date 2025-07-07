@@ -19,7 +19,6 @@ import { SpinnerComponent } from '../spinner/spinner.component';
 export class CountryCardComponent implements OnInit {
   private store = inject(Store);
   private router = inject(Router);
-
   countries$ = this.store.select(selectFilteredCountries);
   loading$ = this.store.select(selectLoading);
 
